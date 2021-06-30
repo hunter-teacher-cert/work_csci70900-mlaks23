@@ -1,0 +1,12 @@
+Chapter 4, Exercise 1
+
+1. No, I wug.
+   You wugga wug.
+   I wug.
+
+2. main [No, I {zoop}]
+   zoop  [baffle]
+   baffle [wug {ping}]
+   ping --> [.]
+
+3. If you invoke baffle(); at the end of the ping method there will be a loop. The method baffle invokes ping() and ping() invokes baffle() and so on.
