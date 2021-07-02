@@ -4,10 +4,13 @@ import java.util.Random;
 public class Craps {
 
   public static void main (String[] args) {
-    //roll();
-    //shoot();
-    round();
-    //practice();
+    Scanner in = new Scanner(System.in);
+    System.out.print("How many rounds would you like to play? ");
+    int r = in.nextInt();
+    for (int i = 0; i < r; i++) {
+      System.out.println("Round " + (i + 1) + " ");
+      round();
+    }
   }
 
 
@@ -40,31 +43,26 @@ public class Craps {
   public static void round() {
     int sum = shoot();
     if (sum == 2 || sum == 3 || sum == 12) {
-      System.out.print("That's craps! You lose. ");
+      System.out.println("That's craps! You lose. ");
     } else if (sum == 7 || sum == 11) {
-        System.out.print ("That's a Natural! You win. ");
+        System.out.println ("That's a Natural! You win. ");
       } else {
         System.out.println("Your sum of " + sum + " is the point. Roll again.");
           boolean shoots = true;
           while (shoots) {
             int point = shoot();
             if (point == sum) {
-              System.out.print("You rolled your point. You win!");
+              System.out.println("You rolled your point. You win!");
               shoots = false;
             } else if (point == 7) {
               System.out.println("You rolled a 7. You lose!");
               break;
             } else {
-              System.out.print("You rolled a " + point + ". Roll again.");
+              System.out.println("You need a " + sum + ". Roll again.");
             }
-
           }
-
         }
-
     }
-
-
   }
 
 
