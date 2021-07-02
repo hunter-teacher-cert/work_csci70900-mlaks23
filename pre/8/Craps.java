@@ -1,5 +1,3 @@
-//Work in Progress
-
 import java.util.Scanner;
 import java.util.Random;
 
@@ -22,39 +20,51 @@ public class Craps {
 
   }
 
-  public static void shoot() {
+  public static int shoot() {
     Scanner in = new Scanner(System.in);
     System.out.print("How many dice would you like to roll? ");
     int dice = in.nextInt();
-    int roll = 0;
-    int sum = 5;   //int sum = 0 (putting in specific values until I figure out how to get the sum)
+    int r = 0;
+    int sum = 0;
 
     for (int i = 1; i <= dice; i++) {    //roll "dice" times
-      roll = i * roll();
+      r = roll();
+      sum = sum + r;
     }
-    //Add a for loop for the sum of the dice- How to do this?
-    //for (int j = 1; j <= dice; j++) {
-      //sum = j + roll;
-        //}
 
     System.out.println("Your total is: " + sum);
+    return sum;
   }
 
 
   public static void round() {
-    int sum = 5; //How do I link this sum to the sum in the shoot method? 5 is just a place holder.
-    shoot();
+    int sum = shoot();
     if (sum == 2 || sum == 3 || sum == 12) {
       System.out.print("That's craps! You lose. ");
     } else if (sum == 7 || sum == 11) {
         System.out.print ("That's a Natural! You win. ");
       } else {
         System.out.println("Your sum of " + sum + " is the point. Roll again.");
-          //shoot();  //only runs once. How to make it continue through to round again?
-          //round(); //keeps looping, never ends. How to make it stop if sum = point?
+          boolean shoots = true;
+          while (shoots) {
+            int point = shoot();
+            if (point == sum) {
+              System.out.print("You rolled your point. You win!");
+              shoots = false;
+            } else if (point == 7) {
+              System.out.println("You rolled a 7. You lose!");
+              break;
+            } else {
+              System.out.print("You rolled a " + point + ". Roll again.");
+            }
+
+          }
+
         }
 
     }
+
+
   }
 
 
