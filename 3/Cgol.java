@@ -80,16 +80,6 @@ public class Cgol
     //System.out.println("["+r+"]" +"["+c+"]" + "=" + livingNeighbors);
     return livingNeighbors;
   }
-    /**
-    int count=0;
-    for (row=r-1;row<= r+1; row++){
-      for(col=c -1;col<=c+1;col++){
-        if (row>=0 && row <r && col>= 0 && col<c)
-      }
-    }
-    **/
-
-
 
   /**
      precond: given a board and a cell
@@ -195,12 +185,6 @@ public static boolean isAlive(char[][] board, int r, int c){
       setCell(board, x, y, 'L');
     }
 
-    // //This needs to repeat for number of cells
-    // System.out.println("Where would you like to put the living cell? Choose a row and a column. "); //use x for row and y for column for now
-    // System.out.print("row: ");
-    // int x = in.nextInt();
-    // System.out.print("column: ");
-    // int y = in.nextInt();
 
 
     System.out.print("How many rounds would you like to play? ");
@@ -213,16 +197,6 @@ public static boolean isAlive(char[][] board, int r, int c){
     //setCell(board, 1, 0, 'L');
     //setCell(board, x, y, 'L');
 
-/* //How to make setCell() repeat "live" times?
-    for (int i; i < live; i ++);
-      setCell(board,x,y, "L") = i * setCell(board, x, y, 'L');
-
-    int j = 0;
-    int [][] livingCells = 0;
-    while(j < live) {
-      livingCells = setCell(board, x, y, 'L');
-    }
-    */
 
     printBoard(board);
 
@@ -238,8 +212,7 @@ public static boolean isAlive(char[][] board, int r, int c){
       }
       i++;
     }
-   /** System.out.println(countNeighbours(board, 3, 3));
-    System.out.println("Next gen cell for 3,3: " + getNextGenCell(board,3,3));**/
+
 
   //check to see the amount of live neighbors based on the coordinates. This is a check
    /** for (int row = 0; row < board.length; row++) {
