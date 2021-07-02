@@ -14,7 +14,7 @@ public class TwoDimArray
   // using a FOR loop
   public static void print1( int[][] a ) {
    for(int row = 0; row < a.length; row++){ //changed i to row
-     for(int col = 0; col < a[0].length; col++){ //changes j to col
+     for(int col = 0; col < a[row].length; col++){ //changes j to col
        System.out.print(a[row][col]); //print out each element
      }
      System.out.println(""); //print a line for spacing
@@ -40,7 +40,7 @@ public class TwoDimArray
 	  int value =0;
     for(int row =0; row<a.length; row++)
     {
-      for(int col =0; col<a[0].length;col++)
+      for(int col =0; col<a[row].length;col++)
       {
         value =a[row][col];
         total= total +value; //adding each element to our total
@@ -75,27 +75,17 @@ public class TwoDimArray
   //return sum of all items on row r of 2D integer array a
   // using a FOREACH loop
 
-  /*
+
   public static int sumRow2( int r, int[][] m ) {     //Need help with foreach loop
-    for (int row: m) {
-      for (int element+: row) {
-        System.out.print(element);
+    int sumRowTotal = 0;
+    for (int[] row: m) {
+      for (int element: row) {
+        sumRowTotal = sumRowTotal + element;
       }
-    return 0;
     }
+    return sumRowTotal;
   }
-  */
-
-/*
-  public static void print2( int[][] a ) {
-    for(int[] row: a){  //going through each row
-      for(int element: row){ //going through each element in a row
-        System.out.print(element);
-        }
-    System.out.println("");
-}
-*/
-
+  
 
 
   public static void main( String [] args )
@@ -109,7 +99,7 @@ public class TwoDimArray
        print1(m1);
        System.out.println("Print1: Array m2");
        print1(m2);
-       System.out.println("Print1: Array m3"); //m3 does not print correctly.
+       System.out.println("Print1: Array m3");
        print1(m3);
 
        System.out.println("Print2 Array m1");
@@ -123,7 +113,7 @@ public class TwoDimArray
        System.out.print("Sum1 of array: \n");
        System.out.println("sum m1 : " + sum1(m1));
        System.out.println("sum m2 : " + sum1(m2));
-       System.out.println("sum m3 : " + sum1(m3)); //sum of incorrectly printed array.
+       System.out.println("sum m3 : " + sum1(m3));
 
        System.out.print("Sum of row: \n");
        System.out.println("sumRow for 2nd row of m2 : " + sumRow(1,m2));
@@ -134,7 +124,7 @@ public class TwoDimArray
        System.out.println("sum m2 : " + sum2(m2));
        System.out.println("sum m3 : " + sum2(m3));
 
-       //System.out.print("Sum of row:" + sumRow2(1, m2));
+       System.out.print("Sum of row:" + sumRow2(1, m2));
   }//end main()
 
 }//end class TwoDimArray
