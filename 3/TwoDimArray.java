@@ -1,10 +1,8 @@
 /**
+3/TwoDimArray.java
 authors:
 vmiller77, skabanakis, mlaks23
 
-skeleton file for
- class twoDimArray
-  ...practice working with 2D arrays
 */
 
 public class TwoDimArray
@@ -76,7 +74,7 @@ public class TwoDimArray
   // using a FOREACH loop
 
 
-  public static int sumRow2( int r, int[][] m ) {     //Need help with foreach loop
+  public static int sumRow2( int r, int[][] m ) {     
     int sumRowTotal = 0;
     for (int[] row: m) {
       for (int element: row) {
@@ -85,7 +83,7 @@ public class TwoDimArray
     }
     return sumRowTotal;
   }
-  
+
 
 
   public static void main( String [] args )
