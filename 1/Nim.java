@@ -22,6 +22,12 @@ public class Nim {
         System.out.print("Player 1: How many stones would you like to choose? Choose 1, 2, or 3: ");
         playerStones = in.nextInt();
 
+        while (playerStones > 3 || playerStones <= 0) {
+          System.out.print("That is not a valid move. Please choose again.");
+          System.out.print("Player 1: How many stone would you like to choose? Choose 1, 2, or 3: ");
+          playerStones = in.nextInt();
+        }
+
         //update the total number of stones
         totalStones = totalStones - playerStones;
         System.out.println("\nRemaining stones: " + totalStones);
