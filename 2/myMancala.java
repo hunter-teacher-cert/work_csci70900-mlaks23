@@ -1,15 +1,13 @@
-// 2/Mancala.java
-//Collaborators: Marisa Laks, Julian Irimina, Mamadu Wally
+// 2/myMancala.java
+//Collaborators: Marisa Laks
+//I've been working on this on my own. It's work in progress.
 
-/*
-We need to know how many stones are in each pot and how to store the new amounts after dropping them
 
-*/
 
 import java.util.Scanner;
 import java.util.*;
 
-public class myMancala1 {
+public class myMancala {
 
   public static void myTurn (int[] a) {
 
@@ -24,7 +22,7 @@ public class myMancala1 {
     board[i] = 0;
   }
 
-choosePot();
+int pot = choosePot();
 
 
 
@@ -50,6 +48,8 @@ try {
         }
 
     printArray(board, pot);
+
+
 
 
 
