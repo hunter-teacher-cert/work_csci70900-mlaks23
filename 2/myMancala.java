@@ -32,24 +32,48 @@ int pot = choosePot();
 try {
       for( int i = pot; i< (pot+4); i++ ) {
         board[i]++;
+        board[pot - 1] = 0;
       }
     }
 
   catch (ArrayIndexOutOfBoundsException e) {
       if (pot == 11){
-        for (int i = 0; i < 1; i++) {
+        for (int i = 6; i < 7; i++) {
         board[i]++;
       }
     } else if (pot == 12) {
-        for (int i = 0; i < 2; i++) {
+        for (int i = 5; i < 7; i++) {
         board[i]++;
           }
           }
         }
 
-    printArray(board, pot);
+  printArray(board);
+
+  int AIpot = AIChoice();
 
 
+/*
+/How to get the AI turn to start at pot 6 and count down?
+  try {
+        for( int i = AIpot; i > (AIpot+4); i++) {
+          board[i]++;
+        }
+      }
+
+  catch (ArrayIndexOutOfBoundsException e) {
+        if (pot == 11){
+          for (int i = 6; i < 7; i++) {
+          board[i]++;
+        }
+      } else if (pot == 12) {
+          for (int i = 5; i < 7; i++) {
+          board[i]++;
+            }
+            }
+          }
+  printArray(board);
+  */
 
 
 
@@ -79,10 +103,11 @@ try {
       System.out.println("}");
      }
 
-  public static void printArray(int[] a, int pot){
+  public static void printArray(int[] a){
+
     System.out.print(" {");
     for (int i = 0; i < 14; i++) {
-      System.out.print(a[i] + "  ");
+      System.out.print(a[i] + "  ");     //can the array print on two lines?
     }
     System.out.println("}");
   }
@@ -108,6 +133,14 @@ try {
 
     System.out.print("You chose pot " + pot + ".");
     return pot;
+  }
+
+  public static int AIChoice () {
+    int AIpot = 0;
+    Random random = new Random();
+    AIpot = random.nextInt(5) + 1;
+    System.out.print("The computer chose pot " + AIpot + ". ");
+    return AIpot;
   }
 
 
