@@ -42,7 +42,7 @@ public static void main(String[] args) {
     n = in.nextInt();
   }
 
-  for (int i = 0; i < n; i++) {
+  for (int i = 0; i <= n; i++) {
     System.out.println("Term " + i + " Fibonacci number is: " + fib(i)); //prints all terms up to n
     //System.out.println("The " + n + "th Fibonacci number is: " + fib(n)); //prints only the nth term
   } //end of for loop
