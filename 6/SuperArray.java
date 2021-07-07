@@ -1,3 +1,6 @@
+//6/SuperArray
+//Collaborators: lfridman2016	mlaks23	jkimbxv
+
 /**
    lab skeleton
    encapsulation / SuperArray
@@ -53,7 +56,7 @@ public class SuperArray
     //Do we have enough space to add one more element? If not, grow
     if(numberElements >= data.length) {
       grow();
-      System.out.println("Growing by 1");
+      System.out.println("Double in size.");
     }
     //Are we past the end of the array? If yes, grow until there is enough capacity
     //while loop to keep increasing the size until index is reached go account for indexes way out of bounds
