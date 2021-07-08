@@ -45,8 +45,9 @@ public class Myexp {
     System.out.print("Check: ");
     System.out.print(x + "   ");
     System.out.print(powerFact(x, n) + "   ");
-    System.out.print(Math.exp(x) + " ");
+    System.out.print(Math.exp(x) + " " + "\n");
   }
+
 
   public static void main (String[] args) {
 
@@ -57,6 +58,14 @@ public class Myexp {
     int n = in.nextInt();
     myexp(x, n);
     check(x, n);
+
+    for (double i = 0.1; i <= 100; i*= 10) {  // as x gets larger, the results are not as accurate
+      check(i, n);
+    }
+
+    for (double i = -0.1; i >= -100; i*= 10) { //as x gets smaller, the results are not as accurate
+      check(i, n);
+    }
 
   }
 
