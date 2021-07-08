@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Myexp {
 
   public static void myexp(double x, int n) {
-    System.out.print("e to the " + n + "th power is approximately ");
+    System.out.print("e to the power of " + x + " is approximately ");
     double result = powerFact(x, n);
     System.out.println(result);
   }
@@ -41,12 +41,15 @@ public class Myexp {
 
 
   public static void check(double x, int n) {
+    //when x is larger and n is large, the results are not as accurate
+    System.out.print("Check: ");
     System.out.print(x + "   ");
     System.out.print(powerFact(x, n) + "   ");
     System.out.print(Math.exp(x) + " ");
   }
 
   public static void main (String[] args) {
+
     Scanner in = new Scanner(System.in);
     System.out.print("Choose a number x: ");
     int x = in.nextInt();
@@ -54,6 +57,7 @@ public class Myexp {
     int n = in.nextInt();
     myexp(x, n);
     check(x, n);
+
   }
 
 }
