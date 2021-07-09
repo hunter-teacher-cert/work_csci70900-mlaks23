@@ -30,51 +30,70 @@ int pot = choosePot();
 //start at index n and add one to each of the following pots.
 //I choose from pots 7 - 12. In my turn I will never drop a stone into pot 0. After 13 I go to 6. Then to 5.
 try {
-      for( int i = pot; i< (pot+4); i++ ) {
+      for( int i = pot; i< (pot+5); i++ ) {
         board[i]++;
-        board[pot - 1] = 0;
+        board[pot] = 0;
       }
     }
 
   catch (ArrayIndexOutOfBoundsException e) {
-      if (pot == 11){
-        for (int i = 6; i < 7; i++) {
+      if (pot == 10) {
+        for (int i = 6; i < 7; i++){
+          board[i]++;
+        }
+      }
+      else if (pot == 11){
+        for (int i = 5; i < 7; i++) {
         board[i]++;
       }
     } else if (pot == 12) {
-        for (int i = 5; i < 7; i++) {
+        for (int i = 4; i < 7; i++) {
         board[i]++;
           }
           }
         }
 
-  printArray(board);
+  printBoard(board);
+
+//Not sure if I need to copy the board each time
+  //copyBaoard(board); //can't get this to work
+
+  int[] AIboard = new int[14];
+   for (int i = 0; i < 14; i++) {
+     AIboard[i] = board[i];
+   }
 
   int AIpot = AIChoice();
 
 
 /*
-/How to get the AI turn to start at pot 6 and count down?
-  try {
-        for( int i = AIpot; i > (AIpot+4); i++) {
-          board[i]++;
+//How to get the AI turn to start at pot 6 and count down?
+    try {
+        for( int i = AIpot; i < 7; i = AIpot--) {
+          AIboard[AIpot] = 0;
+          AIboard[i]++;
         }
       }
 
-  catch (ArrayIndexOutOfBoundsException e) {
-        if (pot == 11){
-          for (int i = 6; i < 7; i++) {
-          board[i]++;
+    catch (ArrayIndexOutOfBoundsException e) {
+        if (AIpot == 3){
+          for (int i = 7; i < 14; i++) {
+          AIboard[i]++;
         }
-      } else if (pot == 12) {
-          for (int i = 5; i < 7; i++) {
-          board[i]++;
+      } else if (AIpot == 2) {
+          for (int i = 8; i < 14; i++) {
+          AIboard[i]++;
             }
-            }
-          }
-  printArray(board);
-  */
+      } else if (AIpot == 1) {
+        for (int i = 9; i < 14; i++) {
+          AIboard[i]++;
+        }
+      }
 
+          }
+  printBoard(AIboard);
+
+*/
 
 
    }
@@ -103,7 +122,7 @@ try {
       System.out.println("}");
      }
 
-  public static void printArray(int[] a){
+  public static void printBoard(int[] a){
 
     System.out.print(" {");
     for (int i = 0; i < 14; i++) {
@@ -112,10 +131,11 @@ try {
     System.out.println("}");
   }
 
-  public static void copyArray(int[] a) {
-    int [] newArray = new int [14];
+//Can't get this to work as a method
+  public static void copyBoard(int[] a) {
+    int [] newBoard = new int [14];
     for (int i = 0; i < 14; i++ ) {
-      newArray[i] = a[i];
+      newBoard[i] = a[i];
     }
   }
 
