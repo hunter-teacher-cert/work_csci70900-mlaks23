@@ -11,6 +11,11 @@ public class GuessStarter {
     System.out.print("Type a number: ");
     yourNumber = in.nextInt();
 
+    while (yourNumber < 1 || yourNumber > 100) {
+      System.out.println("Remember, my number is between 1 and 100, inclusive. Please guess again. ");
+      yourNumber = in.nextInt();
+    }
+
     System.out.print("Your guess is: ");
     System.out.println(yourNumber);
 
@@ -20,11 +25,14 @@ public class GuessStarter {
     System.out.print("The number I was thinking of is: ");
     System.out.println(number);
 
-    System.out.print("You were off by: ");
-    System.out.println(yourNumber - number);
+    if (yourNumber == number) {
+      System.out.print("Congratulations! You guessed my number! ");
+    }
 
-
-
+    else {
+      System.out.print("You were off by: ");
+      System.out.println(yourNumber - number);
+    }
 
 
 
