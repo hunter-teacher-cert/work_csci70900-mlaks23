@@ -1,29 +1,40 @@
+//ds/sort1/SortDemoDriver.java
+//Collaborators: mlaks23	twong-cs	Skabanakis
+
 import java.io.*;
 import java.util.*;
 
 public class SortDemoDriver {
-    public static void main(String[] args) {
-
+  public static void main(String[] args) {
+//default constructor limited to 15
 	SortDemo sd = new SortDemo();
+  System.out.println("Here is your array: ");
 	System.out.println(sd);
-
-	SortDemo sd2 = new SortDemo(20);
+//constructor with the int
+  System.out.println("Here is your larger array: ");
+	SortDemo sd2 = new SortDemo(30);
 	System.out.println(sd2);
 
 	/* part 2 test lines */
-	/*
+
 	  int i;
-	i = sd.findSmallestIndex();
-	System.out.println("sd["+"] = "+sd.get(i)+" : " + sd);
-	i = sd2.findSmallestIndex();
-	System.out.println("sd2["+"] = "+sd2.get(i)+" : " + sd2);
-	*/
+	i = sd.findSmallestIndex(0);
+  //System.out.println(i);  //check to see if the program returns the index of the smallest number
+	System.out.println("sd["+ i + "] = "+sd.get(i)+" : " + sd);
+	i = sd2.findSmallestIndex(0);
+   //System.out.println(i);
+	 System.out.println("sd2["+ i + "] = "+sd2.get(i)+" : " + sd2);
+
 
 	/* part 3 test lines */
-	/*
+
 	  System.out.println(sd);
 	  sd.sort();
+    System.out.print("Sorted list: ");
 	  System.out.println(sd);
-	*/
+
+    // Linear search
+    i = sd.linearSearch(9);
+
     }
 }
