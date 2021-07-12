@@ -50,7 +50,7 @@ public class Maze{
 
     }
 
-    public String toString(){
+  public String toString(){
 	int row,col;
 	String result = "";
 	for (row = 0; row < rows; row++){
@@ -62,9 +62,39 @@ public class Maze{
 	return result;
     }
 
-    public boolean solve(int col,int row){
-	return false;
+  public boolean solve(int col,int row){
+    boolean solved;
+
+    System.out.println(clearScreen +this);
+    delay(100);
+    // Base Case 1 - Solved
+    //if we found the exit, we're done - return true
+    if (board[col][row] == '$')
+        return true;
+
+    //Base Case 2- dead end
+    //If we hit a wall or our path, we can't go further this way - return false
+    if (board[col][row] == ' ' || board[col][row] == 'z' || board[col][row] == '.')
+     return false;
+
+     //put ourselves in the Maze
+     board[col][row]='z';
+
+     //Recursive calls
+     //try all the spaces we can go to
+
+     solved = solve(col+1, row);
+     if (!solved)
+        solved = solve(col - 1, row);
+    if (!solved)
+      solved = solve(col, row+1);
+    if (!solved)
+      solved = solve(col, row-1);
+      //since we're not done yet remove ourselved
+    board[col][row] = '.';
+    return solved;
     }
+
 
 
 
