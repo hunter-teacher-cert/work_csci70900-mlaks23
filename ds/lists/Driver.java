@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Driver{
     public static void main(String[] args) {
-/*	Node n;
+	Node n;
 	n = new Node();
 	n.setData("Eduardo");
 
@@ -19,34 +19,79 @@ public class Driver{
 	n.getNext().setNext(new Node("Steph"));
 	System.out.println(n2.getNext());
 	System.out.println(n.getNext().getNext());
-*/
-	Node L;
-  L = new Node();
-  L.setData("a");
-  Node L2 = new Node("b");
-  L.setNext(L2);
-  L.getNext().setNext(new Node("c"));
-  L2.getNext().setNext(new Node("d"));
-
-  System.out.println("[" + L + ", " + L2 + ", " + L2.getNext() + ", " + L2.getNext().getNext() + "] ");
-
-  Node LX = new Node("x");
-  LX.setNext(L2.getNext());
-  L2.setNext(LX);
-
-  System.out.println("[" + L + ", " + L2 + ", " + L2.getNext() + ", " + LX.getNext() + ", " + LX.getNext().getNext() + "] ");
-
-  LX.setNext(LX.getNext().getNext());
-
-  System.out.println("[" + L + ", " + L2 + ", " + L2.getNext() + ", " + LX.getNext() + ", " + LX.getNext().getNext() + "] ");
-
-
 
 	// 1.Create a new  list that looks like:
 	//   L->"a"->"b"->"c"->"d"
 	// 2. Write the code to insert an "x"
 	//    between the b and the c
 	// 3. Write the code to delete the c
+
+
+	//1
+	Node L;
+	Node a = new Node("a");
+	Node b = new Node("b");
+	Node c = new Node("c");
+	Node d = new Node("d");
+	Node e = new Node("e");
+
+	L=a;
+	a.setNext(b);
+	b.setNext(c);
+	c.setNext(d);
+	d.setNext(e);
+	System.out.println("Part 1:");
+	// remember not to lose the head / start
+	// of the list - make a copy
+	Node currentNode;
+	currentNode = L;
+	while (currentNode != null){
+	    System.out.print(currentNode+"->");
+	    // this is like i=i+1 is for arrays
+	    // but for linked lists
+	    currentNode = currentNode.getNext();
+	}
+	System.out.println("null");
+
+	//2
+	Node x = new Node("X");
+	x.setNext(c);
+	b.setNext(x);
+	System.out.println("Part 2:");
+	currentNode = L;
+	while (currentNode != null){
+	    System.out.print(currentNode+"->");
+	    // this is like i=i+1 is for arrays
+	    // but for linked lists
+	    currentNode = currentNode.getNext();
+	}
+	System.out.println("null");
+
+	//3
+	b.setNext(d);
+	currentNode = L;
+	while (currentNode != null){
+	    System.out.print(currentNode+"->");
+	    // this is like i=i+1 is for arrays
+	    // but for linked lists
+	    currentNode = currentNode.getNext();
+	}
+	System.out.println("null");
+
+	/* Or:
+	   L = new Node("a");
+	   L.setNext(new Node("B"));
+	   L.getNext().setNext(new Node("C"));
+	   L.getNext().getNext().setNext(new Node("D"));
+	   etc
+	*/
+
+	System.out.println("\n");
+	System.out.println("Llist");
+	System.out.println("-----------");
+
+	Llist ll = new Llist();
+	System.out.println(ll);
 
 
     }
