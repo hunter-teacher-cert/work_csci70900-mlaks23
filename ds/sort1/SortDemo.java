@@ -109,22 +109,26 @@ public class SortDemo{
     // and if the value you're searchign for is in the ArrayList, return it.
 
       if(data.get(i) == value) {
-        System.out.print("Your value " + value + " is in the data set. ");
+        System.out.println("Your value " + value + " is in the data set. ");
         return value;
       }
     }
 	// return -1 if it isn't there.
-    System.out.print ("Your value " + value + " is not in the data set. ");
+    System.out.println ("Your value " + value + " is not in the data set. ");
 	   return -1; // replace this return
     }
 
     /* If you finish the lab early you can get started on this */
+
+    //I watched the two videos and looked at Liam and Jiyoon's code, but made my
+    //own modifications.
     public int binarySearch(int value){
 
-	     boolean replacethiswithrealexpression=false;
+       //boolean isUpperLessThanLower = false;  //I couldn't get this to work
 	     int lowerIndex = 0;
-	     int upperIndex = data.size();
+	     int upperIndex =  data.size() - 1;
 	     int middleIndex = data.size()/2;
+
 
 	/* if upper crosses lower it's not there and the lop should exit the loop
 	   and if the item is at middle you should exit the loop
@@ -132,8 +136,19 @@ public class SortDemo{
            you have to replace the "replacethiswithrealexpression" boolean
            with a correct expression based on lowerIndex and upperIndex
 	*/
-	   while (replacethiswithrealexpression)
-	    {
+      //while (!isUpperLessThanLower) { //I took this out when I removed the boolean statement
+	   while (lowerIndex <= upperIndex) {
+       if (value < data.get(middleIndex)) {
+         upperIndex = middleIndex - 1;
+         middleIndex = (upperIndex + lowerIndex)/2;
+       } else if (value > data.get(middleIndex)) {
+         lowerIndex = middleIndex + 1;
+         middleIndex = (upperIndex + lowerIndex)/2;
+       } else if (value == data.get(middleIndex)) {
+         System.out.println("Your value " + value + " is in the data set. ");
+         return value;
+       }
+
 		// update lower and upper.
 		// remember if value is less than data.get(middleIndex) you want to search next time
 		// from lower to the middle and otherwise from the middle to the upper.
@@ -146,7 +161,8 @@ public class SortDemo{
 	   if upperIndex and lowerIndex crossed
 	*/
 
-	  return 0; // replace this return
+    System.out.println ("Your value " + value + " is not in the data set. ");
+	  return -1; // replace this return
       }
 
 
