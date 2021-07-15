@@ -95,9 +95,24 @@ public class Driver{
 	Llist ll = new Llist();
 	System.out.println(ll);
 
-  ll.addFront("m");
-  ll.addFront("n");
-  System.out.println(ll);
+  //ll.addFront("m");
+  //ll.addFront("n");
+  //System.out.println(ll);
+
+  System.out.println("testing isEmpty()");
+  System.out.println(ll.isEmpty());
+  System.out.println();
+
+  System.out.println("testing length()");
+  System.out.println(ll.length()); //return 0
+  ll.addFront("c");
+  ll.addFront("b");
+  ll.addFront("a");
+  System.out.println(ll.length()); //return 3
+  System.out.println();
+
+  //System.out.println("We should see b on the next line");
+  System.out.println(ll.get(5));  //print b
 
 
     }
