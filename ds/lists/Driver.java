@@ -2,7 +2,9 @@ import java.io.*;
 import java.util.*;
 
 public class Driver{
+
     public static void main(String[] args) {
+      /*
 	Node n;
 	n = new Node();
 	n.setData("Eduardo");
@@ -92,6 +94,10 @@ public class Driver{
 
 	Llist ll = new Llist();
 	System.out.println(ll);
+
+  ll.addFront("m");
+  ll.addFront("n");
+  System.out.println(ll);
 
 
     }
