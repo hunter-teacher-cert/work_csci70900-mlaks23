@@ -112,7 +112,24 @@ public class Driver{
   System.out.println();
 
   //System.out.println("We should see b on the next line");
-  System.out.println(ll.get(5));  //print b
+  System.out.println(ll.get(1));  //print b
+
+  System.out.println("Testing set()");
+  ll.set(1, "new");
+  System.out.println(ll);
+
+  System.out.println("Testing insert()");
+  ll.insert(1, "x");
+  System.out.println(ll);
+
+  System.out.println("Testing search()");
+  ll.search("x");
+  System.out.println();
+  ll.search("m");
+
+  System.out.println("Testing remove()");
+  ll.remove(4);
+  System.out.println(ll);
 
 
     }

@@ -65,7 +65,8 @@ public class Llist{
   // items. Starts with index 0
   public String get(int index){
     if (index > this.length()){
-      return null;
+      throw new ArithmeticException("index out of bounds");
+      //new error message. better b/c exits when index > length
     }
     int i = 0;
     Node currentNode = front;
@@ -83,7 +84,8 @@ public class Llist{
   // only sets if the index is within range
   public void set(int index, String value){
     if (index > this.length()){
-         System.out.println("Index is out of range");
+      throw new ArithmeticException("index out of bounds");
+       //new error message. better b/c exits when index > length
        }
        int i = 0;
        Node currentNode = front;
@@ -103,18 +105,65 @@ public class Llist{
   // You will need a variable that refers to
   // the node BEFORE you want to do the insertion.
   public void insert(int index, String value){
+    if (index > this.length()){
+        throw new ArithmeticException("index out of bounds");
+        }
+    int i = 0;
+    Node currentNode = front;
+    while(i != index - 1) {
+          i++;
+          currentNode.getNext();
+          currentNode = currentNode.getNext();
+        }
+    Node newNode = new Node(value);
+    Node postNode = currentNode.getNext();
+    newNode.setNext(postNode);
+    currentNode.setNext(newNode);
 
   }
 
   // returns the index of the first item with
   // data value key. Returns -1 if not found
   public int search(String key){
+    int i = 0;
+    Node currentNode = front;
+    while(i < this.length()) {
+          String val = currentNode.getData();
+          if (val == key) {
+            System.out.println("Your key of " + key + " is in node " + i + ". ");
+            return i;
+          }
+          i++;
+          currentNode = currentNode.getNext();
+        }
+    System.out.println("Your key of " + key + " is not in the list. ");
     return -1;
   }
 
   // removes the node at index.
   // does nothing if index out of bounds
+
+  //I used Jiyoon's code as an example and made my own edits
   public void remove(int index){
+    if (index > this.length()){
+        throw new ArithmeticException("index out of bounds");
+        }
+    int i = 1;
+    Node currentNode = front;
+    if (index == 0) {
+      currentNode.getNext();
+      front = currentNode.getNext();
+    }
+    else if (i <= index - 1) {
+          i++;
+          currentNode.getNext();
+          currentNode = currentNode.getNext();
+        }
+
+    Node newCurrent = new Node();
+    newCurrent = (currentNode.getNext()).getNext();
+    currentNode.setNext(newCurrent);
+    newCurrent = currentNode;
 
   }
 
