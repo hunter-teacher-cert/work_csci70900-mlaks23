@@ -1,0 +1,29 @@
+Marisa Laks, Michelle Best, and Benson Leung
+
+Topic: Maze
+
+Objective: SWBAT design a maze and provide explicit instructions for solving the maze. This lesson will prepare students for pair programming by practicing the driver/navigator model.
+
+Grouping: Heterogeneously Paired
+
+Each person draws a maze on a piece of graph paper. They will write explicit instructions for how to solve their maze. Then each partner takes turns instructing their partner in how to solve the maze without showing what the maze looks like. Person drawing should not say or ask any questions/comments.  At the end, each person shares their maze with their partner and compares their partner’s solution with their own. After each partner shares their maze solutions, they discuss how to improve the instructions.
+
+
+ 		
+
+   	Create Your Maze				Follow Partner's Instructions
+	10 x 10 grid					10 x 10 grid
+
+	
+	Instructions:
+
+
+	1.	_________________________________ 
+	2.	_________________________________ 
+	3.	_________________________________ 
+	4.	_________________________________ 
+	5.	_________________________________ 
+	6.	_________________________________ 
+	7.	_________________________________ 
+	8.	_________________________________ 
+	9.	_________________________________ 
