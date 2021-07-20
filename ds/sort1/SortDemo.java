@@ -170,4 +170,72 @@ public class SortDemo{
 	  return ""+data;
     };
 
+    /*------------------------- MERGESORT STUFF -----------------*/
+
+
+     // Preconditions: a and b are ArrayLists of Integers and
+     //                both are in increasing order
+     // Return: a new ArrayList of Integers that is the result
+     //         of merging a and b. The new ArrayList
+     //         should be in increasing order
+     private ArrayList<Integer> merge(ArrayList<Integer> a, ArrayList<Integer> b){
+       ArrayList<Integer> result = new ArrayList<Integer>();
+
+       int countA = 0;
+       int countB = 0;
+
+       while (result.size() < (a.size() + b.size())){
+         if (countA == a.size()){
+           result.add(b.get(countB));
+           countB++;
+         }
+         else if (countB == b.size()){
+           result.add(a.get(countA));
+           countA++;
+         }
+         else if (a.get(countA) <= b.get(countB)){
+           result.add(a.get(countA));
+           countA++;
+         }
+         else {
+           result.add(b.get(countB));
+           countB++;
+         }
+
+       } //end of while loop
+
+
+       return result;
+     }//end merge
+
+
+     private ArrayList<Integer> fillForMerge(int size){
+       ArrayList<Integer> a = new ArrayList<Integer>();
+       int lastVal = r.nextInt(10);
+       for (int i = 0 ; i < size ; i=i+1){
+         a.add(lastVal);
+         lastVal = lastVal + r.nextInt(10);
+       }
+       return a;
+
+     }//end fillForMerge
+
+     public void testMerge(){
+
+       ArrayList<Integer> a = new ArrayList<Integer>();
+       ArrayList<Integer> b = new ArrayList<Integer>();
+       a = fillForMerge(20);
+       b = fillForMerge(20);
+       System.out.println("Array a: " + a);
+       System.out.println("Array b: " + b);
+       ArrayList<Integer> result = merge(a,b);
+       System.out.println("Merge result: " + result);
+
+
+
+     }
+
+
+
+
 }

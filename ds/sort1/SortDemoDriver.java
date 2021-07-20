@@ -42,5 +42,10 @@ public class SortDemoDriver {
     System.out.print("This is a binary search. ");
     i = sd2.binarySearch(10);
 
+
+    sd.testMerge();
     }
+
+    
+
 }
