@@ -8,6 +8,7 @@ public class SortDemoDriver {
   public static void main(String[] args) {
 //default constructor limited to 15
 	SortDemo sd = new SortDemo();
+  /*
   System.out.println("Here is your array: ");
 	System.out.println(sd);
 //constructor with the int
@@ -15,7 +16,7 @@ public class SortDemoDriver {
 	SortDemo sd2 = new SortDemo(30);
 	System.out.println(sd2);
 
-	/* part 2 test lines */
+	// part 2 test lines
 
 	 int i;
 	i = sd2.findSmallestIndex(0);
@@ -27,7 +28,7 @@ public class SortDemoDriver {
 	 //System.out.println("sd2["+ i + "] = "+sd2.get(i)+" : " + sd2);
 
 
-	/* part 3 test lines */
+   	//part 3 test lines 
 
 	  //System.out.println(sd);
 	  sd2.sort();
@@ -44,8 +45,12 @@ public class SortDemoDriver {
 
 
     sd.testMerge();
+*/
+    System.out.println(sd);
+	  sd.msortTest();
+	  System.out.println(sd);
     }
 
-    
+
 
 }

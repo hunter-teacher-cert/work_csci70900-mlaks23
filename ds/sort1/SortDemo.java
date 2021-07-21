@@ -170,72 +170,115 @@ public class SortDemo{
 	  return ""+data;
     };
 
+
+
     /*------------------------- MERGESORT STUFF -----------------*/
 
 
-     // Preconditions: a and b are ArrayLists of Integers and
-     //                both are in increasing order
-     // Return: a new ArrayList of Integers that is the result
-     //         of merging a and b. The new ArrayList
-     //         should be in increasing order
-     private ArrayList<Integer> merge(ArrayList<Integer> a, ArrayList<Integer> b){
-       ArrayList<Integer> result = new ArrayList<Integer>();
+        // Preconditions: a and b are ArrayLists of Integers and
+        //                both are in increasing order
+        // Return: a new ArrayList of Integers that is the result
+        //         of merging a and b. The new ArrayList
+        //         should be in increasing order
+        private ArrayList<Integer> merge(ArrayList<Integer> a, ArrayList<Integer> b){
+          ArrayList<Integer> result = new ArrayList<Integer>();
 
-       int countA = 0;
-       int countB = 0;
+          int countA = 0;
+          int countB = 0;
 
-       while (result.size() < (a.size() + b.size())){
-         if (countA == a.size()){
-           result.add(b.get(countB));
-           countB++;
-         }
-         else if (countB == b.size()){
-           result.add(a.get(countA));
-           countA++;
-         }
-         else if (a.get(countA) <= b.get(countB)){
-           result.add(a.get(countA));
-           countA++;
-         }
-         else {
-           result.add(b.get(countB));
-           countB++;
-         }
+          while (result.size() < (a.size() + b.size())){
+            if (countA == a.size()){
+              result.add(b.get(countB));
+              countB++;
+            }
+            else if (countB == b.size()){
+              result.add(a.get(countA));
+              countA++;
+            }
+            else if (a.get(countA) <= b.get(countB)){
+              result.add(a.get(countA));
+              countA++;
+            }
+            else {
+              result.add(b.get(countB));
+              countB++;
+            }
 
-       } //end of while loop
-
-
-       return result;
-     }//end merge
+          } //end of while loop
 
 
-     private ArrayList<Integer> fillForMerge(int size){
-       ArrayList<Integer> a = new ArrayList<Integer>();
-       int lastVal = r.nextInt(10);
-       for (int i = 0 ; i < size ; i=i+1){
-         a.add(lastVal);
-         lastVal = lastVal + r.nextInt(10);
-       }
-       return a;
-
-     }//end fillForMerge
-
-     public void testMerge(){
-
-       ArrayList<Integer> a = new ArrayList<Integer>();
-       ArrayList<Integer> b = new ArrayList<Integer>();
-       a = fillForMerge(20);
-       b = fillForMerge(20);
-       System.out.println("Array a: " + a);
-       System.out.println("Array b: " + b);
-       ArrayList<Integer> result = merge(a,b);
-       System.out.println("Merge result: " + result);
+          return result;
+        }//end merge
 
 
+        private ArrayList<Integer> fillForMerge(int size){
+          ArrayList<Integer> a = new ArrayList<Integer>();
+          int lastVal = r.nextInt(10);
+          for (int i = 0 ; i < size ; i=i+1){
+            a.add(lastVal);
+            lastVal = lastVal + r.nextInt(10);
+          }
+          return a;
 
-     }
+        }//end fillForMerge
+
+         /*
+      Parameters: l - an ArrayList
+
+      Returns: a new, sorted ArrayList
+      This routine should implement the mergesort algorithm.
+    */
+    public ArrayList<Integer> msort(ArrayList<Integer> l){
+
+      ArrayList<Integer> left = new ArrayList<Integer>() ;
+      ArrayList<Integer> right = new ArrayList<Integer>();
+
+      // base case - if the input ArrayList is smaller than 2 elements
+
+      if (l.size()<2){
+        return l;
+      }
+
+      // split l into left and right halves
+      else {
+          for (int i = 0; i < l.size()/2; i++){ // split into left side
+            left.add(l.get(i));
+          }
+
+          for (int j = l.size()/2; j < l.size(); j++){ // split into right side
+            right.add(l.get(j));
+          }
+          //System.out.println(left + " ----" + right);
+
+          //msort(left); // sort the left half
+          //msort(right); // sort the right half
+
+          // return the result
+          // merge the two halves that have been sorted
+
+          return merge(msort(left), msort(right));
+
+      }// end else
+
+    }// end msort
+
+       public void msortTest(){
+	      data = msort(data);
+     }// end msortTest
 
 
+        public void testMerge(){
+
+          ArrayList<Integer> a = new ArrayList<Integer>();
+          ArrayList<Integer> b = new ArrayList<Integer>();
+          a = fillForMerge(20);
+          b = fillForMerge(20);
+          System.out.println("Array a: " + a);
+          System.out.println("Array b: " + b);
+          ArrayList<Integer> result = merge(a,b);
+          System.out.println("Array result: " + result);
+
+        }//end testMerge
 
 
 }
