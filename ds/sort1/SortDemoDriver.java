@@ -10,9 +10,11 @@ public class SortDemoDriver {
   public static void main(String[] args) {
 //default constructor limited to 15
 	SortDemo sd = new SortDemo();
-  /*
+  
   System.out.println("Here is your array: ");
 	System.out.println(sd);
+
+  /*
 //constructor with the int
   System.out.println("Here is your larger array: ");
 	SortDemo sd2 = new SortDemo(30);
@@ -29,14 +31,15 @@ public class SortDemoDriver {
    //System.out.println(i);
 	 //System.out.println("sd2["+ i + "] = "+sd2.get(i)+" : " + sd2);
 
-
+*/
    	//part 3 test lines
 
 	  //System.out.println(sd);
-	  sd2.sort();
-    System.out.print("Here is your sorted array: ");
-	  System.out.println(sd2);
+	  sd.sort();
+    System.out.print("Here is your selection sorted array: ");
+	  System.out.println(sd);
 
+/*
     // Linear search
     System.out.print("This is a linear search. ");
     i = sd2.linearSearch(9);
@@ -48,8 +51,9 @@ public class SortDemoDriver {
 
     sd.testMerge();
 */
-    System.out.println(sd);
+    //System.out.println(sd);
 	  sd.msortTest();
+    System.out.print("Here is your merge sorted array: ");
 	  System.out.println(sd);
     }
 

@@ -40,9 +40,12 @@ public class SortDemo{
     System.out.print("How many elements in your array? ");
     int n = in.nextInt();
 
+    System.out.print("Choose a maximum number: ");
+    int m = in.nextInt();
+
 
   	for (int i=0;i<n;i++){ //default size of list is 15
-	    data.add(r.nextInt(20)); //picks random num from 0-19
+	    data.add(r.nextInt(m)); //picks random num from 0-19
 	}
 
     }
