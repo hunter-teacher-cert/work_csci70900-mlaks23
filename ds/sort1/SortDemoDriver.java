@@ -1,5 +1,7 @@
 //ds/sort1/SortDemoDriver.java
-//Collaborators: mlaks23	twong-cs	Skabanakis
+//Collaborators: mlaks23	twong-cs	Skabanakis leungbenson	MichCS
+
+//consultant: tiffany
 
 import java.io.*;
 import java.util.*;
@@ -28,7 +30,7 @@ public class SortDemoDriver {
 	 //System.out.println("sd2["+ i + "] = "+sd2.get(i)+" : " + sd2);
 
 
-   	//part 3 test lines 
+   	//part 3 test lines
 
 	  //System.out.println(sd);
 	  sd2.sort();
