@@ -35,7 +35,13 @@ public class SortDemo{
     public SortDemo(){
 	  data = new ArrayList<Integer>();
 	  r = new Random();
-  	for (int i=0;i<15;i++){ //default size of list is 15
+
+    Scanner in = new Scanner(System.in);
+    System.out.print("How many elements in your array? ");
+    int n = in.nextInt();
+
+
+  	for (int i=0;i<n;i++){ //default size of list is 15
 	    data.add(r.nextInt(20)); //picks random num from 0-19
 	}
 
