@@ -30,14 +30,25 @@ public class BSTree {
   }
   //if key wasn't in the tree
     if (front == null) {
+      System.out.println("Key is not in tree. Cannot delete.");
       return;
     }
 
     //here- front points to node we want to delete and trailer points above
-    //case 1- node is leaf
+    //case 1- node is leaf (no children)
     if (front.getLeft() == null && front.getRight() == null) {
+      if (front.getData() < trailer.getData()) {
+        front = null;
+        trailer.setLeft(null);
+      } else if (front.getData() > trailer.getData()) {
+        front = null;
+        trailer.setRight(null);
+      }
+      System.out.println(key + " deleted");
+
+
       //repoint front parent to null
-    } else if (true) {
+    } else if (true) {  //replace true with condition
       //case 2- check to see if front has one child
       //repoint front parent to front child
     } else { //case 3 - front has two children
