@@ -1,1 +1,1 @@
-notes: Linked List and Sort: https://jamboard.google.com/d/1HvCL2TXOWXs1Ces-7H2k-CvqQGakeZWwH2E6zytu-Jg/viewer?f=2
+notes: Linked List https://jamboard.google.com/d/1rinD3EN4a4vV752nEmg-N2BKeZcEgfw4tVLeyaenW1o/viewer?f=0
