@@ -1,6 +1,6 @@
-# Sorts
+# Sorts and Searches
 
-## Selection Sort and Merge Sort
+## Selection Sort, Merge Sort, Linear Search, Binary Search
 
 
 
