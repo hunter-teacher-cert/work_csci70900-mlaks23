@@ -28,13 +28,14 @@ public class Driver{
 
 
     dll.addEnd("d");
+    System.out.println("Testing addEnd");
     System.out.print(dll + "\n");
     System.out.println("length: " + dll.length()); //return 4
 
 /*
 
-    //System.out.println("We should see b on the next line");
-    //System.out.println(dll.get(1));  //print b
+
+    //System.out.println(dll.get(1));
 
     System.out.println("Testing set()");
     dll.set(1, "new");
@@ -42,7 +43,7 @@ public class Driver{
 */
 
     System.out.println("Testing insert()");
-    dll.insert(3, "x");   //If i insert at 0 or End, there's a null pointer exception.
+    dll.insert(2, "x");   //If i insert at 0 or End, there's a null pointer exception.
     System.out.println(dll);
     System.out.println("length: " + dll.length());
 
@@ -56,7 +57,7 @@ public class Driver{
 */
 
     System.out.println("Testing remove()");
-    dll.remove(1);
+    dll.remove(4);
     System.out.println(dll);
 
 

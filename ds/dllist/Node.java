@@ -4,8 +4,8 @@ import java.util.*;
 public class Node {
 
     private String data;
-    public Node next; //should be private
-    public Node prev; //should be private
+    private Node next;
+    private Node prev; 
 
     public Node() {
 	     data = "";
@@ -18,12 +18,12 @@ public class Node {
 	      next = null;
         prev = null;
     }//constructor(value)
-
+/*
     public Node(String value, Node next) {
 	     data = value;
 	      this.next = next;
     }//constructor(value, next)
-
+*/
     public Node(String value, Node next, Node prev) {  //constructor for previous node?
       data = value;
       this.next = next;
