@@ -4,12 +4,12 @@ import java.util.*;
 
 public class DLlist{
   private Node front; // the front of the list
-  private Node tail; //do I need a tail?
+  private Node back; //do I need a tail?
 
 
   public  DLlist(){
     front = null;
-    tail = null;
+    back = null;
   }
 
   // Add a new node containing data
@@ -25,25 +25,16 @@ public class DLlist{
 
     if (front == null) {
       front = newNode;
-      front = tail = newNode;
-      front.prev = null;
-      tail.next = null;
+      front = back = newNode;
+      front.setPrev(null);
+      back.setNext(null);
 
     } else if (front != null) {
-      front.prev = newNode;
-      newNode.next = front;
+      front.setPrev(newNode);
+      newNode.setNext(front);
       front = newNode;
-      front.prev = null;
+      front.setPrev(null);
 
-    //  tail.next = newNode;   //adds to the end
-    //  newNode.prev = tail;
-    //  tail = newNode;
-    //  tail.next = null;
-
-    //  front.next = newNode;     //this code only links the new node to the original front. How does it link to the previously added node?
-      //newNode.next = front;  //maybe this way?
-  //    newNode.prev = front;
-      //front.prev = newNode; //maybe this way?
     }
   }
 
@@ -53,12 +44,19 @@ public class DLlist{
     currentNode = front;
     String result = "";
     while (currentNode != null){
-      result = result + currentNode + "<->";
+      result = result + currentNode + "->";
       // this is like i=i+1 is for arrays
       // but for linked lists
       currentNode = currentNode.getNext();
     }
-    result = result + "null";
+    result = result + "\n";
+
+    //result = result + "null";
+    currentNode = back;
+    while (currentNode != null){
+      result = result + currentNode + "<-";
+      currentNode = currentNode.getPrev();
+    }
     return result;
 
   }
@@ -134,15 +132,12 @@ public class DLlist{
   // You will need a variable that refers to
   // the node BEFORE you want to do the insertion.
   public void insert(int index, String value){
-    if (index == this.length()) {
-        throw new NullPointerException("Cannot insert at end of list");
-    }
-    if (index == 0) {
-        throw new NullPointerException("Cannot insert at beginning of list");
-    }
-    if (index > this.length()){
-        throw new ArithmeticException("index out of bounds");
-        }
+    if (index == this.length() - 1) {
+        addEnd(value);
+    } else if (index == 0) {
+        addFront(value);
+        System.out.println("hi");
+    } else {
     int i = 0;
     Node currentNode = front;
     while(i != index - 1) {
@@ -152,24 +147,27 @@ public class DLlist{
         }
     Node newNode = new Node(value);
     Node postNode = currentNode.getNext();
+
     newNode.setNext(postNode);
+    newNode.setPrev(currentNode);
     currentNode.setNext(newNode);
     postNode.setPrev(newNode);  //Does this link backwards?
-    newNode.setPrev(currentNode);
+
+    }
   }
 //add to end
   public void addEnd(String value) {
     Node newNode = new Node(value);
     if (front == null) {
       front = newNode;
-    }
-    else {
+    } else {
       Node currentNode = front;
-      while(currentNode.next != null) {
-        currentNode = currentNode.next;
+      while(currentNode.getNext() != null) {
+        currentNode = currentNode.getNext();
       }
-      currentNode.next = newNode;
-      newNode.prev = currentNode;
+      currentNode.setNext(newNode);
+      newNode.setPrev(currentNode);
+      back = newNode;
     }
   }
 
@@ -196,27 +194,35 @@ public class DLlist{
   // removes the node at index.
   // does nothing if index out of bounds
 
-  //I used Jiyoon's code as an example and made my own edits
+
   public void remove(int index){
     if (index > this.length()){
         throw new ArithmeticException("index out of bounds");
         }
-    int i = 1;
     Node currentNode = front;
     if (index == 0) {
-      currentNode.getNext();
       front = currentNode.getNext();
-    }
-    else if (i <= index - 1) {
-          i++;
-          currentNode.getNext();
-          currentNode = currentNode.getNext();
-        }
+      front.setPrev(null);
 
-    Node newCurrent = new Node();    //How do I know if it's still linked back?
-    newCurrent = (currentNode.getNext()).getNext();
-    currentNode.setNext(newCurrent);
-    newCurrent = currentNode;
+    } else if (index == this.length() - 1) {
+      currentNode = back;
+      back = currentNode.getPrev();
+      back.setNext(null);
+
+
+
+    } else {
+        int i = 0;
+        while (i != index) {
+            currentNode = currentNode.getNext();
+            i++;
+          }
+       currentNode.getPrev().setNext(currentNode.getNext());
+       currentNode.getNext().setPrev(currentNode.getPrev());
+    } //end of else
+
+
+
 
   }
 
