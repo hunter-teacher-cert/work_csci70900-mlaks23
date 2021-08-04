@@ -1,1 +1,1 @@
-# Doubly Linked List - work in progress
+# Doubly Linked List - Final version

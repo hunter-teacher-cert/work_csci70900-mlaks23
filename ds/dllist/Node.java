@@ -5,7 +5,7 @@ public class Node {
 
     private String data;
     private Node next;
-    private Node prev; 
+    private Node prev;
 
     public Node() {
 	     data = "";
@@ -18,13 +18,8 @@ public class Node {
 	      next = null;
         prev = null;
     }//constructor(value)
-/*
-    public Node(String value, Node next) {
-	     data = value;
-	      this.next = next;
-    }//constructor(value, next)
-*/
-    public Node(String value, Node next, Node prev) {  //constructor for previous node?
+
+    public Node(String value, Node next, Node prev) {
       data = value;
       this.next = next;
       this.prev = prev;
@@ -40,7 +35,7 @@ public class Node {
 
     public void setPrev(Node n) {
       prev = n;
-    }//set prev?
+    }//set prev
 
     public String getData() {
 	     return data;
@@ -52,7 +47,7 @@ public class Node {
 
     public Node getPrev() {
       return prev;
-    }//getPrev?
+    }//getPrev
 
     public String toString() {
 	     return data;

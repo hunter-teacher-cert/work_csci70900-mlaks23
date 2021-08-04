@@ -4,7 +4,7 @@ import java.util.*;
 
 public class DLlist{
   private Node front; // the front of the list
-  private Node back; //do I need a tail?
+  private Node back;
 
 
   public  DLlist(){
@@ -17,11 +17,6 @@ public class DLlist{
   public void addFront(String data){
     // make the new node
     Node newNode = new Node(data);
-    // point it to what front points to
-  //  newNode.setNext(front);
-    // point front to the new node
-    //front = newNode; //If i add another front to an already existing list, I dont' think this will be a doubly linked list.
-
 
     if (front == null) {
       front = newNode;
@@ -45,13 +40,11 @@ public class DLlist{
     String result = "";
     while (currentNode != null){
       result = result + currentNode + "->";
-      // this is like i=i+1 is for arrays
-      // but for linked lists
       currentNode = currentNode.getNext();
     }
     result = result + "\n";
 
-    //result = result + "null";
+
     currentNode = back;
     while (currentNode != null){
       result = result + currentNode + "<-";
@@ -151,7 +144,7 @@ public class DLlist{
     newNode.setNext(postNode);
     newNode.setPrev(currentNode);
     currentNode.setNext(newNode);
-    postNode.setPrev(newNode);  //Does this link backwards?
+    postNode.setPrev(newNode);
 
     }
   }
@@ -220,11 +213,5 @@ public class DLlist{
        currentNode.getPrev().setNext(currentNode.getNext());
        currentNode.getNext().setPrev(currentNode.getPrev());
     } //end of else
-
-
-
-
   }
-
-
 }
