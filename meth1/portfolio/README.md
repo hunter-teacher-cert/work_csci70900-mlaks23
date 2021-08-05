@@ -1,6 +1,8 @@
 # Portfolio Lessons
 ---
 ## Lesson 1: Objects
+
+### Lesson Plan, PowerPoint Presentation, Code-Along Example
 ---
 ## Lesson 2: Conditionals
 ---
